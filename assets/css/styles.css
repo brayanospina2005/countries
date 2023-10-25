@@ -190,6 +190,18 @@ img{
     top: 0;
 }
 
+.blur-header::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.3);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 .home{
     position: relative;
 }
@@ -250,4 +262,158 @@ img{
     display: grid;
     grid-template-columns: 240px;
     justify-content: center;
+}
+
+.home__card{
+    position: relative;
+    overflow: hidden;
+}
+
+.home__card-img{
+    transition: transform 0.4s ease-in-out; /* ojo */
+}
+
+.home__card-shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+        180deg,
+        hsla(0, 0%, 0%, 0) 50%,
+        hsla(0, 0%, 0%) 125%
+    );
+}
+
+.home__card-title{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: var(--h3-font-size);
+    z-index: 1;
+}
+
+.home__card:hover .home__card-img{
+    transform: scale(1.2);
+}
+
+.button{
+    background-color: hsla(0, 0%, 100%, .2);
+    padding: 1.25rem 1.5rem;
+    color: var(--body-color);
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+    font-family: var(--second-font);
+    font-weight: var(--font-semi-bold);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+}
+
+
+
+.button:hover{
+    background-color: hsla(0, 0%, 100%, .3);
+}
+
+.button i{
+    font-size: 1.25rem;
+    transition: transform 0.4s;
+    font-weight: initial;
+}
+
+.button:hover i{
+    transform: translateX(.25rem);
+}
+
+/* about */
+
+.about__container{
+    row-gap: 3rem;
+}
+
+.about__data{
+    text-align: center;
+}
+
+.about__description{
+    margin-bottom: 2rem;
+}
+
+.about__image{
+    position: relative;
+    justify-self: center;
+    overflow: hidden;
+}
+
+.about__img{
+   width: 300px;
+   transition: transform;
+}
+
+/* .about__img:hover{
+    transform: scale(1.1);
+} */
+
+.about__shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        hsla(0, 0%, 0%, 0) 50%,
+        hsla(0, 0%, 0%) 125%
+    );
+}
+
+.about__image:hover .about__img{
+    transform: scale(1.2);
+}
+
+/* Popular */
+
+.popular__container{
+    padding-top: 1.5rem;
+    grid-template-columns: 240px;
+    justify-content: center;
+    row-gap: 2.5rem;
+}
+
+.popular__image{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.popular_img{
+    transition: transform 0.4s ease-in-out;
+}
+
+.popular__shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+        180deg,
+        hsla(0, 0%, 0%, 0) 50%,
+        hsla(0, 0%, 0%) 125%
+    );
+}
+
+.popular__title{
+    font-size: var(--h3-font-size);
+    margin-bottom: .5rem;
+}
+
+.popular__location{
+    display: inline-flex;
+    align-items: center;
+    column-gap: .25rem;
+    font-size: var(--small-font-size);
+    font-family: var(--second-font);
 }
